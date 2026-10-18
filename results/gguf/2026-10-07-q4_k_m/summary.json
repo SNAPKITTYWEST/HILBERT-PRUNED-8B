@@ -1,0 +1,20 @@
+{
+  "authored144": {
+    "mean_family_balanced_accuracy": 0.8441905417137615,
+    "argmax_flips_vs_bf16": 11,
+    "agreement_with_bf16": 0.9236111111111112,
+    "max_probability_difference": 0.586792403672383,
+    "mean_max_probability_difference": 0.07476304004360373,
+    "prompt_mismatches": 0,
+    "seconds_per_decision": 2.276967431048613
+  },
+  "perturbations108": {
+    "mean_family_balanced_accuracy": 0.7608465608465608,
+    "argmax_flips_vs_bf16": 9,
+    "agreement_with_bf16": 0.9166666666666666,
+    "max_probability_difference": 0.6496498762789595,
+    "mean_max_probability_difference": 0.09766035217509679,
+    "prompt_mismatches": 0,
+    "seconds_per_decision": 2.474931232240743
+  }
+}

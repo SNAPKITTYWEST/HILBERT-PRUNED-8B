@@ -1,0 +1,51 @@
+{
+  "model": {
+    "source": "/tmp/claude-0/-home-user/6a6fc02f-8f5b-5aa5-b6ac-3b30c54f893d/scratchpad/hilbert/qwen35-4b",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "backend": "llamacpp",
+    "dtype": "gguf-quantized",
+    "gguf": {
+      "file": "hilbert-4b-baseline.Q8_0.gguf",
+      "bytes": 4610580192,
+      "sha256": "4c9aff9532cdfba6e27f0f6c102f6086cb79bca4ef779e1ac17d608dc5a0beab"
+    },
+    "vocab_size": 248320,
+    "threads": 4,
+    "n_gpu_layers": 0,
+    "max_prompt_tokens": 4096,
+    "context_tokens": 4352,
+    "decode_chunk": 512,
+    "llama_cpp_python_version": "0.3.35",
+    "transformers_version": "5.17.0"
+  },
+  "quantization": "Q8_0",
+  "conversion": {
+    "source": "Qwen/Qwen3.5-4B",
+    "source_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "source_license": "apache-2.0",
+    "toolchain": {
+      "llama_cpp_python_sdist": "llama_cpp_python-0.3.35.tar.gz",
+      "llama_cpp_python_sdist_sha256": "1139dbb54509074b70893fab8554e3b079aa9f4d312058ce4018ef0019e3de12",
+      "vendored_llama_cpp_build_info_commit": "4df29be",
+      "gguf_py_version": "0.19.0"
+    },
+    "steps": [
+      "python vendor/llama.cpp/convert_hf_to_gguf.py <Qwen3.5-4B@851bf6e> --outtype bf16 --outfile hilbert-4b-baseline.BF16.gguf",
+      "vendor/llama.cpp/build/bin/llama-quantize hilbert-4b-baseline.BF16.gguf hilbert-4b-baseline.Q8_0.gguf Q8_0 4"
+    ],
+    "text_model_only": true,
+    "imatrix": null,
+    "pruned_or_distilled": false
+  },
+  "reference": "results/raw/predictions/direct-{authored144,perturbations108}.jsonl (published Torch BF16)",
+  "fixture_sha256": {
+    "authored144.jsonl": "8162d1c73f925af64453f1ec05ef36d583b3815bf698e60f0d454bd11537e079",
+    "perturbations108.jsonl": "1dd7ccf80518d0e34886478ca23982aa726e9daccd343b9e95cedaf6b569bec4"
+  },
+  "host": {
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "python": "3.13.16"
+  },
+  "suite": "quality"
+}
